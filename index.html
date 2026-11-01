@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Truck Size & Box Calculator — U-Haul, Budget, & Packing Supplies</title>
+<meta name="description" content="Calculate the right moving truck size (10ft, 15ft, 20ft, 26ft) and the exact number of boxes, packing tape, and supplies needed for your apartment or house move.">
+<link rel="canonical" href="https://sebiglesias.com.ar/moving-truck-calculator/">
+<meta name="theme-color" content="#eab308">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2BNDBQP0W7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2BNDBQP0W7');
+</script>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moving Truck Size & Box Calculator — U-Haul, Budget, & Packing Supplies">
+<meta property="og:description" content="Calculate the right moving truck size (10ft, 15ft, 20ft, 26ft) and the exact number of boxes, packing tape, and supplies needed for your apartment or house move.">
+<meta property="og:url" content="https://sebiglesias.com.ar/moving-truck-calculator/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moving Truck Size & Box Calculator — U-Haul, Budget, & Packing Supplies">
+<meta name="twitter:description" content="Calculate the right moving truck size (10ft, 15ft, 20ft, 26ft) and the exact number of boxes, packing tape, and supplies needed for your apartment or house move.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<meta name="google-adsense-account" content="ca-pub-3381238987477190">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3381238987477190" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Moving Truck Size & Box Calculator \u2014 U-Haul, Budget, & Packing Supplies",
+    "description": "Calculate the right moving truck size (10ft, 15ft, 20ft, 26ft) and the exact number of boxes, packing tape, and supplies needed for your apartment or house move.",
+    "url": "https://sebiglesias.com.ar/moving-truck-calculator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What size moving truck do I need for a 2-bedroom apartment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 15 ft truck (like a U-Haul 15' Super Mover) can handle a standard 2-bedroom apartment if packed tightly. If you have a garage, large sectional sofa, or patio furniture, step up to a 20 ft truck to avoid leaving items behind on long-distance moves."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I never use large boxes for books?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Books, tools, and liquids are dense. A large box full of books easily exceeds 80\u2013100 lbs, causing the cardboard bottom to buckle and risking severe lower back injury. Keep all heavy dense items in Small 1.5 cu. ft. boxes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What size truck can you drive with a regular US driver's license?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any rental truck up to 26,000 lbs Gross Vehicle Weight Rating (GVWR)\u2014which includes 10 ft, 15 ft, 20 ft, and 26 ft U-Haul, Budget, and Penske trucks\u2014can be legally driven with a standard Class D non-commercial driver's license in all 50 US states."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<div class="container">
+  
+    <header>
+      <span class="badge">Relocation & Moving</span>
+      <h1>Moving Truck & Box Calculator</h1>
+      <p class="subtitle">Find the right rental truck size and estimate the exact number of packing boxes and supplies needed for your move.</p>
+    </header>
+    <div class="grid">
+      <div class="card">
+        <h2>Home & Move Details</h2>
+        <div class="form-group">
+          <label for="homeSize">Home Size <span>Rooms</span></label>
+          <select id="homeSize">
+            <option value="studio">Studio / Dorm (Under 500 sq ft)</option>
+            <option value="1bed" selected>1-Bedroom Apartment (500–800 sq ft)</option>
+            <option value="2bed">2-Bedroom Apartment / House (800–1,400 sq ft)</option>
+            <option value="3bed">3-Bedroom House (1,400–2,200 sq ft)</option>
+            <option value="4bed">4+ Bedroom Large Home (2,200+ sq ft)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="density">Furnishing Level <span>Density</span></label>
+          <select id="density">
+            <option value="0.8">Minimalist (Light furniture, few knick-knacks)</option>
+            <option value="1.0" selected>Average (Standard household items)</option>
+            <option value="1.25">Heavy / Collector (Full garage, lots of books/gear)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="distance">Move Distance <span>Trip</span></label>
+          <select id="distance">
+            <option value="local">Local Move (Can make 2 trips if needed)</option>
+            <option value="crossCountry" selected>Long Distance / One-Way (Must fit in 1 trip)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Recommended Truck & Box Kit</h2>
+        <div class="kpi-grid">
+          <div class="kpi-card highlight">
+            <div class="kpi-label">Truck Size (U-Haul / Budget)</div>
+            <div class="kpi-value accent" id="truckSize">15 ft Truck</div>
+          </div>
+          <div class="kpi-card highlight">
+            <div class="kpi-label">Estimated Cargo Volume</div>
+            <div class="kpi-value green" id="cargoCuFt">750 cu ft</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Total Boxes Needed</div>
+            <div class="kpi-value" id="totalBoxes">42 boxes</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Packing Tape</div>
+            <div class="kpi-value" id="tapeRolls">4 rolls</div>
+          </div>
+        </div>
+        <div style="background: var(--bg-card-inner); padding: 1rem; border-radius: var(--radius-md); font-size: 0.88rem; line-height: 1.6; color: var(--text-muted);">
+          <div style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">📦 Detailed Box Breakdown:</div>
+          <div id="boxBreakdown">Calculating...</div>
+        </div>
+      </div>
+    </div>
+    
+
+  <section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    
+        <div class="faq-item">
+          <h3>What size moving truck do I need for a 2-bedroom apartment?</h3>
+          <p>A 15 ft truck (like a U-Haul 15' Super Mover) can handle a standard 2-bedroom apartment if packed tightly. If you have a garage, large sectional sofa, or patio furniture, step up to a 20 ft truck to avoid leaving items behind on long-distance moves.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why should I never use large boxes for books?</h3>
+          <p>Books, tools, and liquids are dense. A large box full of books easily exceeds 80–100 lbs, causing the cardboard bottom to buckle and risking severe lower back injury. Keep all heavy dense items in Small 1.5 cu. ft. boxes.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What size truck can you drive with a regular US driver's license?</h3>
+          <p>Any rental truck up to 26,000 lbs Gross Vehicle Weight Rating (GVWR)—which includes 10 ft, 15 ft, 20 ft, and 26 ft U-Haul, Budget, and Penske trucks—can be legally driven with a standard Class D non-commercial driver's license in all 50 US states.</p>
+        </div>
+  </section>
+
+  <div class="cross-links">
+    <a href="https://sebiglesias.com.ar/car-payoff-calculator/">🚗 Car Payoff</a>
+    <a href="https://sebiglesias.com.ar/credit-card-payoff/">💳 Credit Card Payoff</a>
+    <a href="https://sebiglesias.com.ar/insurance-deductible/">🛡️ Insurance Deductible</a>
+    <a href="https://sebiglesias.com.ar/rent-vs-buy-calculator/">🏡 Rent vs Buy</a>
+    <a href="https://sebiglesias.com.ar/concrete-calculator/">🧱 Concrete Calculator</a>
+    <a href="https://sebiglesias.com.ar/moving-truck-calculator/">📦 Moving Truck</a>
+    <a href="https://sebiglesias.com.ar/ac-btu-calculator/">❄️ AC BTU Sizing</a>
+    <a href="https://sebiglesias.com.ar/mulch-calculator/">🌱 Mulch Calculator</a>
+    <a href="https://sebiglesias.com.ar/salary-to-hourly/">💼 Salary to Hourly</a>
+    <a href="https://sebiglesias.com.ar/paint-calculator/">🎨 Paint Calculator</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Free Web Utility. Created by <a href="https://sebiglesias.com.ar">Sebastián Iglesias</a>. Free & Fast.</p>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

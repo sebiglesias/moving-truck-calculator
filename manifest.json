@@ -1,0 +1,15 @@
+{
+  "name": "Moving Truck Size & Box Calculator \u2014 U-Haul, Budget, & Packing Supplies",
+  "short_name": "moving-truck-calculator",
+  "start_url": "https://sebiglesias.com.ar/moving-truck-calculator/",
+  "display": "standalone",
+  "background_color": "#0e0d0b",
+  "theme_color": "#eab308",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
