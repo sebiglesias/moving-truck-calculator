@@ -6,6 +6,17 @@
 <title>Moving Truck Size & Box Calculator — U-Haul, Budget, & Packing Supplies</title>
 <meta name="description" content="Calculate the right moving truck size (10ft, 15ft, 20ft, 26ft) and the exact number of boxes, packing tape, and supplies needed for your apartment or house move.">
 <link rel="canonical" href="https://sebiglesias.com.ar/moving-truck-calculator/">
+  <link rel="alternate" hreflang="en" href="https://sebiglesias.com.ar/moving-truck-calculator/">
+  <link rel="alternate" hreflang="es" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=es">
+  <link rel="alternate" hreflang="de" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=de">
+  <link rel="alternate" hreflang="fr" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=fr">
+  <link rel="alternate" hreflang="it" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=it">
+  <link rel="alternate" hreflang="pt" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=pt">
+  <link rel="alternate" hreflang="nl" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=nl">
+  <link rel="alternate" hreflang="sv" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=sv">
+  <link rel="alternate" hreflang="da" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=da">
+  <link rel="alternate" hreflang="pl" href="https://sebiglesias.com.ar/moving-truck-calculator/?lang=pl">
+  <link rel="alternate" hreflang="x-default" href="https://sebiglesias.com.ar/moving-truck-calculator/">
 <meta name="theme-color" content="#eab308">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
@@ -89,6 +100,18 @@
 <div class="container">
   
     <header>
+<div style='display:flex;justify-content:flex-end;margin-bottom:.5rem'><select id="lang-select" aria-label="Language" style="background:#24221C;border:1px solid rgba(242,239,230,.18);color:#F2EFE6;font-family:'JetBrains Mono',monospace;font-size:.72rem;padding:3px 6px;border-radius:3px;cursor:pointer;margin-left:auto">
+  <option value="en">🇺🇸 EN</option>
+  <option value="es">🇪🇸 ES</option>
+  <option value="de">🇩🇪 DE</option>
+  <option value="fr">🇫🇷 FR</option>
+  <option value="it">🇮🇹 IT</option>
+  <option value="pt">🇵🇹 PT</option>
+  <option value="nl">🇳🇱 NL</option>
+  <option value="sv">🇸🇪 SV</option>
+  <option value="da">🇩🇰 DA</option>
+  <option value="pl">🇵🇱 PL</option>
+</select></div>
       <span class="badge">Relocation & Moving</span>
       <h1>Moving Truck & Box Calculator</h1>
       <p class="subtitle">Find the right rental truck size and estimate the exact number of packing boxes and supplies needed for your move.</p>
@@ -239,5 +262,41 @@
 </div>
 
 <script src="app.js"></script>
+
+<script>
+/* I18N_AUTO_ENGINE */
+(function(){
+  const DICT = {"en": {"title": "Moving Truck Size & Box Calculator<span class='accent'>.</span>", "sub": "Cubic feet volume, U-Haul/Penske truck size & packing boxes by bedroom"}, "es": {"title": "Calculadora de Camión de Mudanza y Cajas<span class='accent'>.</span>", "sub": "Volumen en m³/pies³, tamaño de furgón o camión y cajas por habitación"}, "de": {"title": "Umzugswagen-Größe & Umzugskartons Rechner<span class='accent'>.</span>", "sub": "Ladevolumen in m³, passende Transporter-Klasse & Anzahl Kartons"}, "fr": {"title": "Calculateur Volume Déménagement & Camion<span class='accent'>.</span>", "sub": "Cubage en m³, taille d'utilitaire idéale et nombre de cartons par pièce"}, "it": {"title": "Calcolatore Furgone Trasloco e Scatole<span class='accent'>.</span>", "sub": "Volume in metri cubi, dimensione camion e scatoloni necessari"}, "pt": {"title": "Calculadora de Caminhão de Mudança e Caixas<span class='accent'>.</span>", "sub": "Volume da mudança, tamanho do baú e quantidade de caixas de papelão"}, "nl": {"title": "Verhuiswagen & Verhuisdozen Calculator<span class='accent'>.</span>", "sub": "Bereken aantal kuub (m³), formaat bestelbus en benodigde verhuisdozen"}, "sv": {"title": "Flyttbilsstorlek & Flyttkartonger Kalkylator<span class='accent'>.</span>", "sub": "Beräkna volym i kubikmeter, rätt skåpbil och antal flyttkartonger"}, "da": {"title": "Flyttebil Størrelse & Flyttekasser Beregner<span class='accent'>.</span>", "sub": "Beregn rumfang i m³, den rette flyttevogn og antal flyttekasser"}, "pl": {"title": "Kalkulator Samochodu do Przeprowadzki i Kartonów<span class='accent'>.</span>", "sub": "Oblicz kubaturę mebli, rozmiar busa oraz liczbę pudełek przeprowadzkowych"}};
+  const h1El = document.querySelector('h1');
+  const subEl = document.querySelector('.sub') || document.querySelector('header p');
+  const selEl = document.getElementById('lang-select');
+  function applyLang(lang) {
+    const entry = DICT[lang] || DICT.en;
+    document.documentElement.lang = lang;
+    if (h1El && entry.title) h1El.innerHTML = entry.title;
+    if (subEl && entry.sub) subEl.textContent = entry.sub;
+    if (lang !== 'en' && entry.sub) {
+      document.title = (h1El ? h1El.textContent : '') + ' — ' + entry.sub;
+    }
+  }
+  const params = new URLSearchParams(window.location.search);
+  const init = params.get('lang') || localStorage.getItem('moving-truck-calculator-lang') || 'en';
+  const valid = DICT[init] ? init : 'en';
+  if (selEl) {
+    selEl.value = valid;
+    selEl.addEventListener('change', function(e) {
+      const nl = e.target.value;
+      localStorage.setItem('moving-truck-calculator-lang', nl);
+      const u = new URL(window.location.href);
+      if (nl === 'en') u.searchParams.delete('lang');
+      else u.searchParams.set('lang', nl);
+      window.history.replaceState({}, '', u);
+      applyLang(nl);
+    });
+  }
+  applyLang(valid);
+})();
+</script>
+
 </body>
 </html>
